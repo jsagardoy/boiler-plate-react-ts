@@ -1,7 +1,7 @@
 # Boiter-Plate-React-Ts
 ## Description
 This is a boiler plate project ready to be used that includes react, typescript, webpack, defined and ready to go.
-## Proyect structure
+## Project structure
 
 - **Layout**: Defines Master Pages
 - **Common**: Reusable components that can be used in other projects
@@ -15,7 +15,7 @@ Credits to [Braulio Diez](https://github.com/brauliodiez)
 ## Make it run
 All you need to do to make ir run is install packages via `npm install` and then start it using `npm start`.
 
-> **Note**: It's set up for running on Google Chrome, if you want to set up a different default browser you will need to configure webpack by definning
+> **Note**: It's set up for running on Google Chrome, If you want to set up a different default browser you will need to configure webpack by definning
 >
 > _`const defaultBrowser = "Google Chrome";`_
 > According to your Operating System and the Browser that you wish to use.
