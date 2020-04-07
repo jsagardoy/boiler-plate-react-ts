@@ -2,7 +2,7 @@
   "name": "boiler-plate",
   "version": "1.0.0",
   "description": "Boiler plate for React with TS",
-  "main": "index.js",
+  "main": "index.tsx",
   "repository": {
     "type": "git",
     "url": "TBD"
@@ -46,8 +46,12 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.9",
+    "@material-ui/icons": "^4.9.1",
     "core-js": "^3.3.2",
+    "dtslint": "^3.4.1",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "typeface-roboto": "0.0.75"
   }
 }

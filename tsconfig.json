@@ -1,5 +1,3 @@
-
-
 {
   "compilerOptions": {
     "target": "es6",
@@ -12,17 +10,7 @@
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src/",
-    "paths": {
-      "layout": ["layout"],
-      "scenes": ["scenes"],
-      "core": ["core"],
-      "pods": ["pods"],
-      "common": ["common"],
-      "content": ["content"],
-      "locales": ["locales"]
-    }
-  },
+     },
   "compileOnSave": false,
   "exclude": ["node_modules"]
 }

@@ -1,9 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { ClientsContainer } from './layout/clients_container';
 
-import { HelloComponent } from './hello';
 
-ReactDOM.render(
-  <HelloComponent/>,
-  document.getElementById('root')
-);
+ReactDOM.render(<ClientsContainer />, document.getElementById('root'));
