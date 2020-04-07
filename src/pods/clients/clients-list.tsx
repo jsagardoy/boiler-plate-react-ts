@@ -6,13 +6,12 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import { ClientType } from '../../common-app/interfaces';
+import { ClientType } from 'common-app/interfaces';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
-      maxWidth: '36ch',
       backgroundColor: theme.palette.background.paper,
     },
     inline: {

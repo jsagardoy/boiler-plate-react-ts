@@ -9,7 +9,17 @@ const defaultBrowser = "Google Chrome";
 module.exports = {
   context: path.join(basePath, "src"),
   resolve: {
-    extensions: [".js", ".ts", ".tsx"]
+    alias: {
+      api: path.resolve(__dirname, './src/api/'),
+      commonApp: path.resolve(__dirname, './src/common-app/'),
+      common: path.resolve(__dirname, './src/common/'),
+      core: path.resolve(__dirname, './src/core/'),
+      layout: path.resolve(__dirname, './src/layout/'),
+      content: path.resolve(__dirname, './src/content/'),
+      pods: path.resolve(__dirname, './src/pods/'),      
+      scenes: path.resolve(__dirname, './src/scenes/'),
+    },
+    extensions: [".js",".jsx", ".ts", ".tsx"]
   },
   entry: ["@babel/polyfill", "./index.tsx"],
   output: {

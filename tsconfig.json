@@ -10,7 +10,19 @@
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
-     },
+    "baseUrl": "src",
+    "paths": {
+      "api": ["api"],
+      "common-app": ["common-app"],
+      "common": ["common"],
+      "core": ["core"],
+      "layout": ["layout"],
+      "content": ["content"],
+      "pods": ["pods"],
+      "scenes": ["scenes"]
+    }
+  },
   "compileOnSave": false,
   "exclude": ["node_modules"]
 }
+

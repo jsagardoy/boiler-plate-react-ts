@@ -1,4 +1,4 @@
-import { TrainerType, ExerciseType, ClientType } from '../common-app/interfaces';
+import { TrainerType, ExerciseType, ClientType } from 'common-app/interfaces';
 
 export const trainerAPI: TrainerType[] = [
   {
