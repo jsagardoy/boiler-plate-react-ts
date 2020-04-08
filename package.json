@@ -50,8 +50,10 @@
     "@material-ui/icons": "^4.9.1",
     "core-js": "^3.3.2",
     "dtslint": "^3.4.1",
+    "final-form": "^4.19.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-final-form": "^6.4.0",
     "typeface-roboto": "0.0.75"
   }
 }

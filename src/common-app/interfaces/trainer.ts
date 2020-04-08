@@ -1,4 +1,4 @@
-import { PersonType } from "./person";
+import { PersonType } from './person';
 
 export interface TrainerType {
   trainer_id: number;

@@ -10,6 +10,7 @@ export const trainerAPI: TrainerType[] = [
       lastName: 'apellido 1',
       phone: 666777888,
       avatar: 'https://www.microsiervos.com/images/troy-mcclure.jpg',
+      bio: 'les hace correr mucho',
     },
     clientList: [1, 2, 5],
     exerciseList: [1, 3, 5],
@@ -24,6 +25,7 @@ export const trainerAPI: TrainerType[] = [
       phone: 666777888,
       avatar:
         'https://st-listas.20minutos.es/images/2015-01/391971/4620399_640px.jpg?1420742366',
+      bio: 'especialista en fitness',
     },
     clientList: [1, 2, 5],
     exerciseList: [1, 3, 5],
@@ -37,6 +39,7 @@ export const trainerAPI: TrainerType[] = [
       lastName: 'apellido 3',
       phone: 666777888,
       avatar: 'https://frinkiac.com/img/S08E03/1203568.jpg',
+      bio: 'También es Fisio',
     },
     clientList: [1, 2, 5],
     exerciseList: [1, 3, 5],
@@ -50,6 +53,7 @@ export const trainerAPI: TrainerType[] = [
       lastName: 'apellido 4',
       phone: 666777888,
       avatar: 'https://i.ytimg.com/vi/j3m6E6TMrKg/hqdefault.jpg',
+      bio: 'Hace cosas',
     },
     clientList: [1, 2, 5],
     exerciseList: [1, 3, 5],
@@ -64,6 +68,7 @@ export const trainerAPI: TrainerType[] = [
       phone: 666777888,
       avatar:
         'https://tstotopix.files.wordpress.com/2016/03/unlock_ned_shirtlessflanders.png',
+      bio: 'Especializado en mejora de rendimiento cardiobascular',
     },
     clientList: [1, 2, 5],
     exerciseList: [1, 3, 5],
@@ -76,42 +81,36 @@ export const execiseAPI: ExerciseType[] = [
     trainer_id: [1, 2, 3],
     name: 'ejercicio 1',
     description: 'descripción 1',
-    images: [
-      'https://www.entrenamientos.com/media/cache/exercise_375/uploads/exercise/press-de-banca-con-barra-5740.png',
+    images:
       'https://www.entrenoydieta.es/blogs/wp-content/uploads/2018/06/Press-de-banca-con-barra.png',
-    ],
   },
   {
     exercise_id: 2,
     trainer_id: [2],
     name: 'ejercicio 2',
     description: 'descripción ',
-    images: ['https://i.blogs.es/945d4a/pull-over3/1366_2000.jpg'],
+    images: 'https://i.blogs.es/945d4a/pull-over3/1366_2000.jpg',
   },
   {
     exercise_id: 3,
     trainer_id: [2, 4, 5],
     name: 'ejercicio 3',
     description: 'descripción 3',
-    images: [
-      // tslint:disable-next-line: max-line-length
-      'https://i1.wp.com/cronosfit.com/wp-content/uploads/2013/11/pull-over-polea-alta-brazos-extendidos.jpg?fit=420%2C280&ssl=1',
-      'https://i.blogs.es/8f85b5/pull-over-polea/450_1000.jpg',
-    ],
+    images: 'https://i.blogs.es/8f85b5/pull-over-polea/450_1000.jpg',
   },
   {
     exercise_id: 4,
     trainer_id: [1],
     name: 'ejercicio 4',
     description: 'descripción 4',
-    images: ['https://i.blogs.es/209555/remo1/1366_2000.jpg'],
+    images: 'https://i.blogs.es/209555/remo1/1366_2000.jpg',
   },
   {
     exercise_id: 5,
     trainer_id: [1, 4, 5, 3],
     name: 'ejercicio 5',
     description: 'descripción 5',
-    images: ['https://i.blogs.es/0c65a1/remot1/1366_2000.jpg'],
+    images: 'https://i.blogs.es/0c65a1/remot1/1366_2000.jpg',
   },
 ];
 
@@ -126,25 +125,26 @@ export const clientAPI: ClientType[] = [
       age: 25,
       email: 'cliente1@emailfalso.com',
       phone: 666555444,
+      bio: 'le duele la mano',
     },
     exercisesList: [
       {
         exercise_id: 1,
         done: true,
-        reps: 15,
-        serts: 3,
+        reps: 20,
+        sets: 30,
       },
       {
         exercise_id: 3,
         done: false,
         reps: 15,
-        serts: 3,
+        sets: 5,
       },
       {
         exercise_id: 5,
         done: false,
-        reps: 15,
-        serts: 3,
+        reps: 12,
+        sets: 2,
       },
     ],
     height: 1.9,
@@ -157,30 +157,31 @@ export const clientAPI: ClientType[] = [
       // tslint:disable-next-line: max-line-length
       avatar:
         // tslint:disable-next-line: max-line-length
-        'https://lh3.googleusercontent.com/proxy/APCSgeBg9KCoqktv5lbRJIXKsHZ4focDbWNTYsWCFcb1Xy8UasTAbl80Ns0VlcJrFmZ4ZFQK5Nee_WiZyZlrDwvm_zZBQbdth2BYclCSZQaCqvw-HN8',
+        'https://vignette.wikia.nocookie.net/uolliac/images/b/bd/Homer_Simpson.png/revision/latest/top-crop/width/360/height/450?cb=20170508222544',
       lastName: 'apellido 2',
       age: 50,
       email: 'cliente2@emailfalso.com',
       phone: 666555444,
+      bio: 'le duele el pie',
     },
     exercisesList: [
       {
         exercise_id: 1,
         done: true,
-        reps: 15,
-        serts: 3,
+        reps: 20,
+        sets: 2,
       },
       {
         exercise_id: 3,
         done: false,
         reps: 15,
-        serts: 3,
+        sets: 3,
       },
       {
         exercise_id: 5,
         done: false,
         reps: 15,
-        serts: 3,
+        sets: 3,
       },
     ],
     height: 1.9,

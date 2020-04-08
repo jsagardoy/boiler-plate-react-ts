@@ -5,4 +5,5 @@ export interface PersonType {
   email: string;
   age: number;
   avatar: string;
+  bio?: string;
 }

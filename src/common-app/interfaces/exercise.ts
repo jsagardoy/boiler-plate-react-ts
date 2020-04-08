@@ -3,11 +3,12 @@ export interface ExerciseType {
   trainer_id: number[];
   name: string;
   description: string;
-  images?: string[];
+  images?: string;
 }
 
 export interface ExerciseSettings {
+  exercise_id: number;
   reps: number;
-  serts: number;
+  sets: number;
   done: boolean;
 }
