@@ -16,10 +16,13 @@ import {
   Theme,
 } from '@material-ui/core';
 import { ClientExerciseComponent } from './client-exercise-detail';
+import {
+  RouteComponentProps,
+  useRouteMatch,
+  useParams,
+} from 'react-router-dom';
 
-interface Props {
-  clientId: number;
-}
+interface Props {};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,9 +38,9 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const ClientDetailComponent: React.FC<Props> = (props) => {
-  const { clientId } = props;
+  const {clientId} = useParams();
   const classes = useStyles();
-  
+  const newClientId: number = +clientId;
 
   const getClient = (id: number): ClientType => {
     const clientsList: ClientType[] = clientAPI;
@@ -70,7 +73,7 @@ export const ClientDetailComponent: React.FC<Props> = (props) => {
             <>
               <ListItem alignItems='flex-start'>
                 <ClientExerciseComponent
-                  clientId={clientId}
+                  clientId={newClientId}
                   exerciseElem={exer}
                 />
               </ListItem>
@@ -81,5 +84,5 @@ export const ClientDetailComponent: React.FC<Props> = (props) => {
       </Container>
     );
   };
-  return displayClientInfo(getClient(clientId));
+  return displayClientInfo(getClient(newClientId));
 };
