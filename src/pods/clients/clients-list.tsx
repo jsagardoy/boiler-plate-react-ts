@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import { ClientType } from 'common-app/interfaces';
+
 import {
   ListItemSecondaryAction,
   IconButton,
@@ -32,7 +33,7 @@ export interface Props {
   clientsList: ClientType[];
 }
 
-export const ClientsList: React.FC<Props> = (props) => {
+export const ClientsListContainerComponent: React.FC<Props> = (props) => {
   const { clientsList } = props;
   const classes = useStyles();
 
@@ -40,7 +41,7 @@ export const ClientsList: React.FC<Props> = (props) => {
     <List className={classes.root}>
       {clientsList.map((client) => {
         return (
-          <>
+          <div key={client.client_id}>
             <ListItem alignItems='flex-start'>
               <ListItemAvatar>
                 <Avatar
@@ -63,7 +64,7 @@ export const ClientsList: React.FC<Props> = (props) => {
               </ListItemSecondaryAction>
             </ListItem>
             <Divider variant='inset' component='li' />
-          </>
+          </div>
         );
       })}
     </List>

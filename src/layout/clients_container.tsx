@@ -1,14 +1,13 @@
-import * as React from 'React';
+import * as React from 'react';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { ClientsList } from 'pods/clients';
+import { ClientsListContainerComponent } from 'pods/clients';
 import { ClientType } from 'common-app/interfaces';
 import { clientAPI } from 'api/data.mock';
 
-
-export const ClientsContainer = () => {
+export const ClientsContainerComponent = () => {
   const clientsList: ClientType[] = clientAPI;
 
   return (
@@ -20,7 +19,7 @@ export const ClientsContainer = () => {
           component='div'
           style={{ backgroundColor: '#cfe8fc', height: '100vh' }}
         >
-        <ClientsList clientsList={clientsList} />
+          <ClientsListContainerComponent clientsList={clientsList} />
         </Typography>
       </Container>
     </React.Fragment>

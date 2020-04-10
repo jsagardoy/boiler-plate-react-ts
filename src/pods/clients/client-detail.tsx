@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {
-  ClientType,
-} from 'common-app/interfaces';
-import { clientAPI} from 'api';
+import { ClientType } from 'common-app/interfaces';
+import { clientAPI } from 'api';
 import {
   Container,
   Card,
@@ -18,7 +16,6 @@ import {
   Theme,
 } from '@material-ui/core';
 import { ClientExerciseComponent } from './client-exercise-detail';
-
 
 interface Props {
   clientId: number;
@@ -40,6 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export const ClientDetailComponent: React.FC<Props> = (props) => {
   const { clientId } = props;
   const classes = useStyles();
+  
 
   const getClient = (id: number): ClientType => {
     const clientsList: ClientType[] = clientAPI;
@@ -49,14 +47,14 @@ export const ClientDetailComponent: React.FC<Props> = (props) => {
 
   const displayClientInfo = (client: ClientType): React.ReactElement => {
     return (
-      <Container >
+      <Container>
         <Card className={classes.root}>
           <CardHeader
             title={`${client.person_info.name} ${client.person_info.lastName}`}
             subheader={client.client_id}
           />
           <CardMedia
-          className={classes.media}
+            className={classes.media}
             image={client.person_info.avatar}
             title={`${client.person_info.name} ${client.person_info.lastName}`}
           />
@@ -67,14 +65,19 @@ export const ClientDetailComponent: React.FC<Props> = (props) => {
           </CardContent>
         </Card>
         <Divider variant='fullWidth' />
-        <List>{client.exercisesList.map((exer) =>
-        <>
-            <ListItem alignItems='flex-start'>
-               <ClientExerciseComponent clientId={clientId} exerciseElem={exer}/>
-            </ListItem>
-            <Divider variant='fullWidth'/>
-        </>
-        )}</List>
+        <List>
+          {client.exercisesList.map((exer) => (
+            <>
+              <ListItem alignItems='flex-start'>
+                <ClientExerciseComponent
+                  clientId={clientId}
+                  exerciseElem={exer}
+                />
+              </ListItem>
+              <Divider variant='fullWidth' />
+            </>
+          ))}
+        </List>
       </Container>
     );
   };
