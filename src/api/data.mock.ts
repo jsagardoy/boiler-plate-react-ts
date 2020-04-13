@@ -1,4 +1,4 @@
-import { TrainerType, ExerciseType, ClientType } from 'common-app/interfaces';
+import { TrainerType, ExerciseType, ClientType, LoginType } from 'common-app/interfaces';
 
 export const trainerAPI: TrainerType[] = [
   {
@@ -186,5 +186,18 @@ export const clientAPI: ClientType[] = [
     ],
     height: 1.9,
     weight: 85,
+  },
+];
+
+export const loginAPI:LoginType[] = [
+  {
+    username: 'emailT1@falso.com',
+    password: 'entrenador',
+    rol: 'trainer',
+  },
+  {
+    username: 'emailT1@falso.com',
+    password: 'entrenador',
+    rol: 'user',
   },
 ];
