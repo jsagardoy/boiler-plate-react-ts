@@ -4,7 +4,7 @@ import { ClientsContainerComponent } from 'layout';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { App } from 'scenes/app';
 import { ClientDetailComponent } from 'pods/clients';
-import { LoginComponent } from 'common/login';
+import { LoginComponent, logoutHandlerComponent } from 'common/login';
 
 const routing = (
   <Router>
@@ -12,6 +12,7 @@ const routing = (
       <Route exact path='/' component={App} />
       <Route exact path='/clients' component={ClientsContainerComponent} />
       <Route exact path='/login' component={LoginComponent} />
+      <Route exact path='/logout' component={logoutHandlerComponent} />
       <Route path='/client/:clientId'>
         <ClientDetailComponent />
       </Route>

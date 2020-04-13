@@ -5,10 +5,22 @@ import { loginAPI } from 'api';
 import { LoginType } from 'common-app/interfaces';
 import { useHistory } from 'react-router-dom';
 import { FORM_ERROR } from 'final-form';
+import { setSessionCookie } from 'common/cookies';
 
 interface Props {}
 export const LoginComponent: React.FC<Props> = (props) => {
   const history = useHistory();
+  const [loading, setLoading] = React.useState(false);
+
+  const handleSubmitLogin = async (loginInfo) => {
+    setLoading(true);
+    setSessionCookie({ loginInfo });
+    history.push('/');
+    setLoading(false);
+  };
+  if (loading) {
+    return <h4>Logging in...</h4>;
+  }
 
   const onSubmit = (loginInfo: LoginType) => {
     const logged = loginAPI.find(
@@ -18,9 +30,9 @@ export const LoginComponent: React.FC<Props> = (props) => {
     );
     if (!logged) {
       return { [FORM_ERROR]: 'El usuario o password no son correctos' };
+    } else {
+      handleSubmitLogin(loginInfo);
     }
-
-    history.push('/');
   };
 
   return (
