@@ -22,7 +22,7 @@ import {
 import DoneIcon from '@material-ui/icons/Done';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
-import { red } from '@material-ui/core/colors';
+
 
 interface Props {
   exerciseElem: ExerciseSettings;

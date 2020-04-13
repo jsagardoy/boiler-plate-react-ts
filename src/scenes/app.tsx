@@ -16,7 +16,6 @@ export const App: React.FC<{}> = () => {
               <Link to='/clients'>Clients</Link>
             </li>
             <li>
-              {/* <Link to={`/client/?clientId=1/detail`} >Agente Wigum</Link> */}
               <Link to={`/client/${clientId}`}>Agente Wigum</Link>
             </li>
           </ul>
