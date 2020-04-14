@@ -1,6 +1,6 @@
 
 {
-    "extends": ["eslint:recommended"],
+    "extends": ["tslint:recommended"],
     "defaultSeverity": "warning",
     "rules": {
       "align": [true, "parameters", "statements"],
