@@ -23,7 +23,6 @@ import DoneIcon from '@material-ui/icons/Done';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
 
-
 interface Props {
   exerciseElem: ExerciseSettings;
   clientId: number;
@@ -32,11 +31,11 @@ interface Props {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      maxWidth: '80%',
+      maxWidth: '100%',
     },
     media: {
       height: 0,
-      paddingTop: '56.25%', // 16:9
+      paddingTop: '56.25%',
     },
     expand: {
       transform: 'rotate(0deg)',
@@ -73,11 +72,7 @@ export const ClientExerciseComponent: React.FC<Props> = (props) => {
   return exercise ? (
     <Card className={classes.root}>
       <CardHeader
-        avatar={
-          <Avatar
-            src={trainer.trainer_info.avatar}
-          />
-        }
+        avatar={<Avatar src={trainer.trainer_info.avatar} />}
         title={exercise.name}
       />
       <CardMedia
@@ -86,10 +81,8 @@ export const ClientExerciseComponent: React.FC<Props> = (props) => {
         title={exercise.name}
       />
       <CardContent>
-        <Typography variant='body2' color='textSecondary' component='p'>
-          <Typography paragraph>Repeticiones: {exerciseElem.reps}</Typography>
-          <Typography paragraph>Series: {exerciseElem.sets}</Typography>
-        </Typography>
+        <Typography paragraph>Repeticiones: {exerciseElem.reps}</Typography>
+        <Typography paragraph>Series: {exerciseElem.sets}</Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label='add to favorites'>

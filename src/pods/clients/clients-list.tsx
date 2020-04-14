@@ -16,6 +16,7 @@ import {
 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import PhoneIcon from '@material-ui/icons/Phone';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,6 +37,11 @@ export interface Props {
 export const ClientsListContainerComponent: React.FC<Props> = (props) => {
   const { clientsList } = props;
   const classes = useStyles();
+  const history = useHistory();
+
+  const handleGoToDetails = (id: number) => {
+    history.push(`/client/${id}`);
+  };
 
   return (
     <List className={classes.root}>
@@ -58,7 +64,11 @@ export const ClientsListContainerComponent: React.FC<Props> = (props) => {
               />
 
               <ListItemSecondaryAction>
-                <IconButton edge='end' aria-label='detail'>
+                <IconButton
+                  edge='end'
+                  aria-label='detail'
+                  onClick={(e) => handleGoToDetails(client.client_id)}
+                >
                   <ArrowForwardIosIcon />
                 </IconButton>
               </ListItemSecondaryAction>
