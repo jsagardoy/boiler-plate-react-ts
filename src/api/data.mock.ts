@@ -12,8 +12,8 @@ export const trainerAPI: TrainerType[] = [
       avatar: 'https://www.microsiervos.com/images/troy-mcclure.jpg',
       bio: 'les hace correr mucho',
     },
-    clientList: [1, 2, 5],
-    exerciseList: [1, 3, 5],
+    clientList: [1],
+    exerciseList: [1],
   },
   {
     trainer_id: 2,
@@ -189,7 +189,7 @@ export const clientAPI: ClientType[] = [
   },
 ];
 
-export const loginAPI:LoginType[] = [
+export const loginAPI: LoginType[] = [
   {
     username: 'emailT1@falso.com',
     password: 'entrenador',

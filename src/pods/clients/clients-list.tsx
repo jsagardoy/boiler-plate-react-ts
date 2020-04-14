@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import { ClientType } from 'common-app/interfaces';
+import { ClientType, TrainerType } from 'common-app/interfaces';
 
 import {
   ListItemSecondaryAction,
@@ -17,6 +17,8 @@ import {
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import PhoneIcon from '@material-ui/icons/Phone';
 import { useHistory } from 'react-router-dom';
+import { trainerAPI, clientAPI } from 'api';
+import { getSessionCookie } from 'common/cookies';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,12 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export interface Props {
-  clientsList: ClientType[];
-}
+export interface Props {}
 
 export const ClientsListContainerComponent: React.FC<Props> = (props) => {
-  const { clientsList } = props;
   const classes = useStyles();
   const history = useHistory();
 
@@ -43,6 +42,19 @@ export const ClientsListContainerComponent: React.FC<Props> = (props) => {
     history.push(`/client/${id}`);
   };
 
+  const getTrainer = (username: string): TrainerType =>
+    trainerAPI.find((trainer) => trainer.trainer_info.email === username);
+
+  const getClientsList = (): ClientType[] => {
+    // returs the expecifict client list for the logged trainer
+    const user = getSessionCookie();
+    const trainer: TrainerType = getTrainer(user.loginInfo.username);
+    const trainerClientsList: number[] = trainer.clientList;
+    const cl: ClientType[] = trainerClientsList.map(t => clientAPI.find((c) => c.client_id === t));
+    return cl;
+  };
+
+  const clientsList = getClientsList();
   return (
     <List className={classes.root}>
       {clientsList.map((client) => {

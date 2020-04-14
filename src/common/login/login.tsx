@@ -32,7 +32,7 @@ export const LoginComponent: React.FC<Props> = (props) => {
     if (!logged) {
       return { [FORM_ERROR]: 'El usuario o password no son correctos' };
     } else {
-      handleSubmitLogin(loginInfo);
+      handleSubmitLogin(logged);
     }
   };
 

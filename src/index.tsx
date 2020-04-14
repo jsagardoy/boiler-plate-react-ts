@@ -13,7 +13,6 @@ import { LoginComponent, logoutHandlerComponent } from 'common/login';
 import { getSessionCookie } from 'common/cookies';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log(getSessionCookie());
   return (
     <Route
       {...rest}

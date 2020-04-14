@@ -22,7 +22,7 @@
     "no-any": false,
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": false,
+    "no-console": true,
     "no-consecutive-blank-lines": [true, 2],
     "no-construct": true,
     "no-debugger": true,
