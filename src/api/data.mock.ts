@@ -196,8 +196,8 @@ export const loginAPI:LoginType[] = [
     rol: 'trainer',
   },
   {
-    username: 'emailT1@falso.com',
-    password: 'entrenador',
+    username: 'emailT2@falso.com',
+    password: 'cliente',
     rol: 'user',
   },
 ];
