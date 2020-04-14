@@ -16,7 +16,7 @@ export const ClientsContainerComponent = () => {
         <h1>Lista de clientes</h1>
         <Typography
           component='div'
-          style={{ backgroundColor: '#cfe8fc', height: '100vh' }}
+          style={{ backgroundColor: '#FFFFFF', height: '100vh' }}
         >
           <ClientsListContainerComponent />
         </Typography>
