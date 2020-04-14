@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { ClientType } from 'common-app/interfaces';
-import { clientAPI } from 'api';
+import { ClientType, TrainerType } from 'common-app/interfaces';
+import { clientAPI, trainerAPI } from 'api';
 import {
   Card,
   CardHeader,
   CardMedia,
   CardContent,
   Typography,
-  Divider,
   List,
   ListItem,
   createStyles,
@@ -38,15 +37,19 @@ export const ClientDetailComponent: React.FC<Props> = (props) => {
   const classes = useStyles();
   const newClientId: number = +clientId;
 
-  const getClient = (id: number): ClientType => {
+  const getClient = (): ClientType => {
     const clientsList: ClientType[] = clientAPI;
-    const client = clientsList.find((elem) => elem.client_id === id);
+    const client = clientsList.find((elem) => elem.client_id === newClientId);
     return client;
   };
+
 
   const handleBackToClientList = () => {
     history.push(`/clients`);
   };
+
+  const getTrainer = (): TrainerType =>
+    trainerAPI.find((tr) => tr.trainer_id === getClient().trainer_id);
 
   const displayClientInfo = (client: ClientType): React.ReactElement => {
     return (
@@ -71,22 +74,20 @@ export const ClientDetailComponent: React.FC<Props> = (props) => {
             </Typography>
           </CardContent>
         </Card>
-        <Divider variant='fullWidth' />
         <List>
           {client.exercisesList.map((exer) => (
             <div key={exer.exercise_id}>
               <ListItem alignItems='flex-start'>
                 <ClientExerciseComponent
-                  clientId={newClientId}
+                  trainer={getTrainer()}
                   exerciseElem={exer}
                 />
               </ListItem>
-              <Divider variant='fullWidth' />
             </div>
           ))}
         </List>
       </>
     );
   };
-  return displayClientInfo(getClient(newClientId));
+  return displayClientInfo(getClient());
 };

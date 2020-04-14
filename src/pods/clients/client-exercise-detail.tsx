@@ -23,15 +23,10 @@ import DoneIcon from '@material-ui/icons/Done';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
 
-interface Props {
-  exerciseElem: ExerciseSettings;
-  clientId: number;
-}
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      maxWidth: '100%',
+      maxWidth: '30%',
     },
     media: {
       height: 0,
@@ -50,8 +45,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+interface Props {
+  exerciseElem: ExerciseSettings;
+  trainer: TrainerType;
+}
 export const ClientExerciseComponent: React.FC<Props> = (props) => {
-  const { exerciseElem, clientId } = props;
+  const { exerciseElem, trainer } = props;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -61,15 +60,14 @@ export const ClientExerciseComponent: React.FC<Props> = (props) => {
 
   const exercise: ExerciseType = execiseAPI.find(
     (elem) => elem.exercise_id === exerciseElem.exercise_id
+      && trainer.exerciseList.includes(exerciseElem.exercise_id)
+      && elem.trainer_id.includes(trainer.trainer_id)
   );
 
-  const trainer: TrainerType = trainerAPI.find(
-    (t) =>
-      t.clientList.includes(clientId) &&
-      t.exerciseList.includes(exercise.exercise_id)
-  );
+  const isExerciseAssigned = (): boolean =>
+    trainer.exerciseList.includes(exerciseElem.exercise_id);
 
-  return exercise ? (
+  return exercise && isExerciseAssigned() ? (
     <Card className={classes.root}>
       <CardHeader
         avatar={<Avatar src={trainer.trainer_info.avatar} />}
