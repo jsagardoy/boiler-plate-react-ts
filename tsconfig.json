@@ -1,5 +1,3 @@
-
-
 {
   "compilerOptions": {
     "target": "es6",
@@ -12,17 +10,19 @@
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src/",
+    "baseUrl": "src",
     "paths": {
-      "layout": ["layout"],
-      "scenes": ["scenes"],
-      "core": ["core"],
-      "pods": ["pods"],
+      "api": ["api"],
+      "common-app": ["common-app"],
       "common": ["common"],
+      "core": ["core"],
+      "layout": ["layout"],
       "content": ["content"],
-      "locales": ["locales"]
+      "pods": ["pods"],
+      "scenes": ["scenes"]
     }
   },
   "compileOnSave": false,
   "exclude": ["node_modules"]
 }
+
